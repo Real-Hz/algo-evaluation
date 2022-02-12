@@ -16,25 +16,25 @@
  */
 function mouvementsFou(ligne, colonne) {
     var tab = [];
-    var k = 1;
-    while (ligne + k <= 8 && colonne + k <= 8) {
-        tab.push([ligne + k, colonne + k])
-        k++;
+    var pion = 1;
+    while (ligne + pion <= 8 && colonne + pion <= 8) {
+        tab.push([ligne + pion, colonne + pion])
+        pion++;
     }
-    k = 1;
-    while (ligne + k <= 8 && colonne - k >= 1) {
-        tab.push([ligne + k, colonne + k])
-        k++;
+    pion = 1;
+    while (ligne + pion <= 8 && colonne - pion >= 1) {
+        tab.push([ligne + pion, colonne + pion])
+        pion++;
     }
-    k = 1;
-    while (ligne - k >= 1 && colonne - k >= 1) {
-        tab.push([ligne + k, colonne + k])
-        k++;
+    pion = 1;
+    while (ligne - pion >= 1 && colonne - pion >= 1) {
+        tab.push([ligne + pion, colonne + pion])
+        pion++;
     }
-    k = 1;
-    while (ligne - k >= 1 && colonne + k <= 8) {
-        tab.push([ligne + k, colonne + k])
-        k++;
+    pion = 1;
+    while (ligne - pion >= 1 && colonne + pion <= 8) {
+        tab.push([ligne + pion, colonne + pion])
+        pion++;
     }
     return tab
 }
