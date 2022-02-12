@@ -14,18 +14,39 @@
  * dire un tableau qui contiendra de petits tableaux qui sont les paires ligne-colonne.
  * 
  */
- function mouvementsFou(ligne, colonne) {
-    return [
-        [ligne - 1, colonne - 1],
-        [ligne, colonne],
-        [ligne + 1, colonne + 1],
-    ]
+function mouvementsFou(ligne, colonne) {
+    var tab = [];
+    var k = 1;
+    while (ligne + k <= 8 && colonne + k <= 8) {
+        tab.push([ligne + k, colonne + k])
+        k++;
+    }
+    k = 1;
+    while (ligne + k <= 8 && colonne - k >= 1) {
+        tab.push([ligne + k, colonne + k])
+        k++;
+    }
+    k = 1;
+    while (ligne - k >= 1 && colonne - k >= 1) {
+        tab.push([ligne + k, colonne + k])
+        k++;
+    }
+    k = 1;
+    while (ligne - k >= 1 && colonne + k <= 8) {
+        tab.push([ligne + k, colonne + k])
+        k++;
+    }
+    return tab
 }
+console.log(mouvementsFou(6, 3))
+console.log(mouvementsFou(3, 4))
+console.log(mouvementsFou(2, 2))
+
 
 /**
  * Ce log ne fait pas partie de l'exercice, ne vous en préoccupez donc pas, mais il vous aidera à afficher vos tests avec un joli formattage.
  */
- console.log(`Les movements d'un fou sont : ${mouvementsFou(4, 4).map(cell => `[${cell}]`)}`)
+console.log(`Les movements d'un fou sont : ${mouvementsFou(4, 4).map(cell => `[${cell}]`)}`)
 
 
 
